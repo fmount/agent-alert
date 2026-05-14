@@ -1,0 +1,22 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/notify.sh stop"
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "type": "command",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/notify.sh notification"
+      },
+      {
+        "matcher": "elicitation_dialog",
+        "type": "command",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/notify.sh notification"
+      }
+    ]
+  }
+}

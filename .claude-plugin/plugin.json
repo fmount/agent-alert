@@ -1,0 +1,5 @@
+{
+  "name": "agent-alert",
+  "description": "Pluggable notifications when AI coding agents stop or need attention — supports Claude Code and OpenCode",
+  "version": "0.1.0"
+}
