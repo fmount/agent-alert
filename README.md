@@ -1,10 +1,19 @@
-# agent-alert
+# agent-alert: a semaphore for AI coding agents
 
-Pluggable notifications for AI coding agents.  Know when your agent
-finishes or needs input - in tmux, on your desktop, or anywhere else.
+When you're running multiple agent sessions in parallel -- different
+features, reviews, debugging across tmux windows -- there's no way to
+know which one finished, which one is stuck waiting for input, and which
+one errored out.  You end up cycling through windows manually, breaking
+your flow.
+
+agent-alert fixes this with a simple pipeline: **event -> notification ->
+backend**.  Agents fire lifecycle events (stop, needs-input, error), the
+core dispatcher maps them to semaphore colors (green, yellow, red), and
+pluggable backends deliver the alert however you want -- colored tmux
+tabs, dunst desktop popups, terminal bells, or your own custom script.
 
 Works with **Claude Code** and **OpenCode**.  No hard dependencies beyond
-`bash`, enable only the backends you need.
+`bash` -- enable only the backends you need.
 
 ```
 ┌──────────────────┐   ┌──────────────────┐
